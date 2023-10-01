@@ -1,11 +1,23 @@
 import Image from "next/image";
 import Header from "./components/header";
+import JakeCoin from "./components/jakeCoin";
 
 export default function Home() {
   return (
     <main>
-      <div style={{ width: "100%", height: "100vh", backgroundColor: "green" }}>
-        <h1>hi</h1>
+      <div
+        style={{
+          backgroundImage: "url(/jakeBackground.jpeg)",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          height: "calc(100vh - 8rem)",
+        }}
+        className="w-full flex h-full justify-center items-center "
+      >
+        <div style={{ width: "500px", height: "500px" }}>
+          <JakeCoin />
+        </div>
       </div>
     </main>
   );
