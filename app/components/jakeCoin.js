@@ -5,47 +5,27 @@ import { motion } from "framer-motion";
 
 function JakeCoin() {
   return (
-    <div>
-      <div className="bg-black w-full h-full rounded-full relative p-2">
-        <div
-          style={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-          }}
-        >
-          <div style={{ width: "350px", height: "350px" }}>
-            <Image
-              alt="jake harrison graphic"
-              layout="responsive"
-              width={500}
-              height={500}
-              src={"/jakeGif.gif"}
-            />
-          </div>
-        </div>
-        <motion.div
-          animate={{ rotate: [0, 360] }}
-          transition={{ ease: "linear", duration: 50, repeat: true }}
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            top: 0,
-            bottom: 0,
-            left: 0,
-            right: 0,
-          }}
-        >
-          <Image
-            alt="jake harrison graphic"
-            width={500}
-            height={500}
-            src={"/jakeCircle.png"}
-          />
-        </motion.div>
+    <div className="bg-black relative rounded-full w-64 h-64 sm:w-96 sm:h-96 flex justify-center items-center">
+      <div className="absolute">
+        <Image
+          width={10}
+          height={10}
+          className="w-40 h-40 sm:w-64 sm:h-64"
+          src={"/jakeGif.gif"}
+        />
       </div>
+      <motion.div
+        animate={{ rotate: [0, 360] }}
+        transition={{ duration: 90, repeat: true }}
+        className={"absolute"}
+      >
+        <Image
+          style={{ padding: 15 }}
+          width={500}
+          height={500}
+          src={"/jakeCircle.png"}
+        />
+      </motion.div>
     </div>
   );
 }

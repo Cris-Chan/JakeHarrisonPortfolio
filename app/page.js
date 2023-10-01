@@ -1,5 +1,3 @@
-import Image from "next/image";
-import Header from "./components/header";
 import JakeCoin from "./components/jakeCoin";
 
 export default function Home() {
@@ -15,9 +13,7 @@ export default function Home() {
         }}
         className="w-full flex h-full justify-center items-center "
       >
-        <div style={{ width: "500px", height: "500px" }}>
-          <JakeCoin />
-        </div>
+        <JakeCoin />
       </div>
     </main>
   );
