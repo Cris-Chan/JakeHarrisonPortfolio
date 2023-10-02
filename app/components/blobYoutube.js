@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
 function BlobYoutube() {
+  const isBrowser = typeof window !== "undefined";
+  const windowWidth = isBrowser ? window.innerWidth : 0;
   return (
     <AnimatePresence>
       <motion.div
@@ -25,11 +27,11 @@ function BlobYoutube() {
               transform: "translate(-50%, -50%)",
               zIndex: 100,
             }}
-            width={window.innerWidth < 912 ? 50 : 100}
-            height={window.innerWidth < 912 ? 50 : 100}
+            width={windowWidth.innerWidth < 912 ? 50 : 100}
+            height={windowWidth.innerWidth < 912 ? 50 : 100}
             src={"/youtube.svg"}
           />
-          {window.innerWidth < 912 ? (
+          {typeof window !== "undefined" && window.innerWidth < 912 ? (
             <Spline scene="https://prod.spline.design/XmC3HKYdLO4CjRAD/scene.splinecode" />
           ) : (
             <Spline
