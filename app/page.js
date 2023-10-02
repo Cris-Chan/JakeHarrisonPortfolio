@@ -33,6 +33,7 @@ export default function Home() {
           autoPlay
           loop
           muted
+          playsInline // This attribute prevents fullscreen playback on mobile devices
           style={{
             position: "absolute",
             width: "100%",
@@ -42,6 +43,7 @@ export default function Home() {
             objectFit: "cover",
             transform: "translate(-50%, -50%)",
             zIndex: "-100",
+            pointerEvents: "none", // This attribute makes the video non-clickable
           }}
         >
           <source src="/lava.mp4" type="video/mp4" />
