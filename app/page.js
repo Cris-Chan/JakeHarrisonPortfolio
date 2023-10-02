@@ -11,7 +11,7 @@ export default function Home() {
       <div
         className="w-full flex h-full justify-center items-center "
         style={{
-          height: "calc(100vh - 4rem)",
+          height: "calc(100vh - 16rem)",
           borderLeft: "48px solid black",
           borderRight: "48px solid black",
           borderBottom: "48px solid black",
