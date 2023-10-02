@@ -21,7 +21,7 @@ function Header() {
 
   return (
     <div className="flex justify-center h-16 bg-black">
-      <nav className="p-6 hidden sm:flex flex-row gap-12 justify-center text-center max-w-lg bg-black z-20">
+      <nav className="p-6 hidden sm:flex flex-row gap-12 justify-center text-center max-w-lg bg-black">
         <Link href={"/"}>
           <motion.h3
             whileHover={{ scale: 1.1 }}
@@ -93,7 +93,7 @@ function Header() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
             exit={{ opacity: 0 }}
-            className="absolute gap-5 flex flex-col bg-black top-16 w-screen items-center pb-8 z-0"
+            className="absolute gap-5 flex flex-col bg-black top-16 w-screen items-center pb-8"
           >
             <Link
               href={"/"}
