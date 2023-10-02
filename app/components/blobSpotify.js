@@ -28,7 +28,7 @@ function BlobSpotify() {
           }}
           width={windowWidth.innerWidth < 912 ? 50 : 100}
           height={windowWidth.innerWidth < 912 ? 50 : 100}
-          src={"/Spotify.svg"}
+          src={"/spotify.svg"}
         />
         {typeof window !== "undefined" && window.innerWidth < 912 ? (
           <Spline
