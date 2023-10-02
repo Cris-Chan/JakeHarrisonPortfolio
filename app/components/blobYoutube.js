@@ -25,11 +25,11 @@ function BlobYoutube() {
               transform: "translate(-50%, -50%)",
               zIndex: 100,
             }}
-            width={window.innerWidth < 812 ? 50 : 100}
-            height={window.innerWidth < 812 ? 50 : 100}
+            width={window.innerWidth < 912 ? 50 : 100}
+            height={window.innerWidth < 912 ? 50 : 100}
             src={"/youtube.svg"}
           />
-          {window.innerWidth < 812 ? (
+          {window.innerWidth < 912 ? (
             <Spline scene="https://prod.spline.design/XmC3HKYdLO4CjRAD/scene.splinecode" />
           ) : (
             <Spline
