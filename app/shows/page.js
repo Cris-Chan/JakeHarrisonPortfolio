@@ -3,7 +3,7 @@ import Show from "../components/show";
 
 function Shows() {
   return (
-    <div className="flex flex-col items-center py-10 space-y-10">
+    <div className="flex flex-col items-center m-10 space-y-10">
       <Show
         date={"SEP 03"}
         title={"Paper tiger show"}
