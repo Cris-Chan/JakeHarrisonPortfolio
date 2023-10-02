@@ -48,7 +48,16 @@ export default function Home() {
         <div style={{ position: "absolute", bottom: "12%", right: "12%" }}>
           <BlobEmail />
         </div>
-        <JakeCoin />
+        <div
+          style={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+          }}
+        >
+          <JakeCoin />
+        </div>
       </div>
     </main>
   );
