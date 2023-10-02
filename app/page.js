@@ -21,15 +21,31 @@ export default function Home() {
         <BlobEmail />
       </div>
       <div
-        style={{
-          backgroundImage: "url(/jakeBackground.jpeg)",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-          height: "calc(100vh - 8rem)",
-        }}
         className="w-full flex h-full justify-center items-center "
+        style={{
+          height: "calc(100vh - 4rem)",
+          borderLeft: "48px solid black",
+          borderRight: "48px solid black",
+          borderBottom: "48px solid black",
+        }}
       >
+        <video
+          autoPlay
+          loop
+          muted
+          style={{
+            position: "absolute",
+            width: "100%",
+            left: "50%",
+            top: "50%",
+            height: "100%",
+            objectFit: "cover",
+            transform: "translate(-50%, -50%)",
+            zIndex: "-100",
+          }}
+        >
+          <source src="/lava.mp4" type="video/mp4" />
+        </video>
         <JakeCoin />
       </div>
 
@@ -62,4 +78,3 @@ export default function Home() {
     </main>
   );
 }
-
