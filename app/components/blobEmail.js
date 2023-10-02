@@ -12,7 +12,7 @@ function BlobEmail() {
       className="flex justify-center items-center"
     >
       <motion.div
-        initial={{ x: 1000, y: 1000 }}
+        initial={{ x: 1000 }}
         animate={{ x: 0, y: 0 }}
         transition={{ duration: 4, type: "spring" }}
       >
@@ -24,18 +24,22 @@ function BlobEmail() {
             transform: "translate(-50%, -50%)",
             zIndex: 100,
           }}
-          width={100}
-          height={100}
+          width={window.innerWidth < 812 ? 50 : 100}
+          height={window.innerWidth < 812 ? 50 : 100}
           src={"/email.svg"}
         />
-        <Spline
-          style={{
-            width: 220,
-            height: 220,
-            position: "relative",
-          }}
-          scene="https://prod.spline.design/UN99r1hJp6sTu0uR/scene.splinecode"
-        />
+        {window.innerWidth < 812 ? (
+          <Spline scene="https://prod.spline.design/XmC3HKYdLO4CjRAD/scene.splinecode" />
+        ) : (
+          <Spline
+            style={{
+              width: 220,
+              height: 220,
+              position: "relative",
+            }}
+            scene="https://prod.spline.design/UN99r1hJp6sTu0uR/scene.splinecode"
+          />
+        )}
       </motion.div>
     </motion.div>
   );

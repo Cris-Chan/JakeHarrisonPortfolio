@@ -9,10 +9,10 @@ function BlobSpotify() {
     <motion.div
       whileHover={{ scale: 1.06 }}
       transition={{ type: "spring" }}
-      className="flex justify-center items-center z-[100]"
+      className="flex justify-center items-center"
     >
       <motion.div
-        initial={{ x: -1000, y: -1000 }}
+        initial={{ x: -1000 }}
         animate={{ x: 0, y: 0 }}
         transition={{ duration: 4, type: "spring" }}
       >
@@ -24,18 +24,29 @@ function BlobSpotify() {
             transform: "translate(-50%, -50%)",
             zIndex: 100,
           }}
-          width={100}
-          height={100}
-          src={"/spotify.svg"}
+          width={window.innerWidth < 812 ? 50 : 100}
+          height={window.innerWidth < 812 ? 50 : 100}
+          src={"/Spotify.svg"}
         />
-        <Spline
-          style={{
-            width: 220,
-            height: 220,
-            position: "relative",
-          }}
-          scene="https://prod.spline.design/hDjxx1oTdLPCwtbG/scene.splinecode"
-        />
+        {typeof window !== "undefined" && window.innerWidth < 812 ? (
+          <Spline
+            style={{
+              width: 120,
+              height: 120,
+              position: "relative",
+            }}
+            scene="https://prod.spline.design/XmC3HKYdLO4CjRAD/scene.splinecode"
+          />
+        ) : (
+          <Spline
+            style={{
+              width: 220,
+              height: 220,
+              position: "relative",
+            }}
+            scene="https://prod.spline.design/kGkerseyFeaxBg7f/scene.splinecode"
+          />
+        )}
       </motion.div>
     </motion.div>
   );

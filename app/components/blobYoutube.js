@@ -13,7 +13,7 @@ function BlobYoutube() {
         className="flex justify-center items-center"
       >
         <motion.div
-          initial={{ x: 1000, y: -1000 }}
+          initial={{ x: 1000 }}
           animate={{ x: 0, y: 0 }}
           transition={{ duration: 4, type: "spring" }}
         >
@@ -25,18 +25,22 @@ function BlobYoutube() {
               transform: "translate(-50%, -50%)",
               zIndex: 100,
             }}
-            width={100}
-            height={100}
+            width={window.innerWidth < 812 ? 50 : 100}
+            height={window.innerWidth < 812 ? 50 : 100}
             src={"/youtube.svg"}
           />
-          <Spline
-            style={{
-              width: 250,
-              height: 230,
-              position: "relative",
-            }}
-            scene="https://prod.spline.design/MA75odX7syZmt1x3/scene.splinecode"
-          />
+          {window.innerWidth < 812 ? (
+            <Spline scene="https://prod.spline.design/XmC3HKYdLO4CjRAD/scene.splinecode" />
+          ) : (
+            <Spline
+              style={{
+                width: 250,
+                height: 230,
+                position: "relative",
+              }}
+              scene="https://prod.spline.design/MA75odX7syZmt1x3/scene.splinecode"
+            />
+          )}
         </motion.div>
       </motion.div>
     </AnimatePresence>
