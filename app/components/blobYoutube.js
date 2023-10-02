@@ -1,12 +1,21 @@
 "use client";
 import Spline from "@splinetool/react-spline";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
 function BlobYoutube() {
-  const isBrowser = typeof window !== "undefined";
-  const windowWidth = isBrowser ? window.innerWidth : 0;
+  const [windowWidth, setWindowWidth] = useState(0);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setWindowWidth(window.innerWidth);
+      const handleResize = () => setWindowWidth(window.innerWidth);
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }
+  }, []);
+
   return (
     <AnimatePresence>
       <motion.div
@@ -27,12 +36,19 @@ function BlobYoutube() {
               transform: "translate(-50%, -50%)",
               zIndex: 100,
             }}
-            width={windowWidth.innerWidth < 912 ? 50 : 100}
-            height={windowWidth.innerWidth < 912 ? 50 : 100}
+            width={windowWidth < 912 ? 50 : 100}
+            height={windowWidth < 912 ? 50 : 100}
             src={"/youtube.svg"}
           />
-          {typeof window !== "undefined" && window.innerWidth < 912 ? (
-            <Spline scene="https://prod.spline.design/XmC3HKYdLO4CjRAD/scene.splinecode" />
+          {windowWidth < 912 ? (
+            <Spline
+              style={{
+                width: 120,
+                height: 120,
+                position: "relative",
+              }}
+              scene="https://prod.spline.design/XmC3HKYdLO4CjRAD/scene.splinecode"
+            />
           ) : (
             <Spline
               style={{

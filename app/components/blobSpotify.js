@@ -1,12 +1,21 @@
 "use client";
 import Spline from "@splinetool/react-spline";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
 function BlobSpotify() {
-  const isBrowser = typeof window !== "undefined";
-  const windowWidth = isBrowser ? window.innerWidth : 0;
+  const [windowWidth, setWindowWidth] = useState(0);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setWindowWidth(window.innerWidth);
+      const handleResize = () => setWindowWidth(window.innerWidth);
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }
+  }, []);
+
   return (
     <motion.div
       whileHover={{ scale: 1.06 }}
@@ -26,11 +35,11 @@ function BlobSpotify() {
             transform: "translate(-50%, -50%)",
             zIndex: 100,
           }}
-          width={windowWidth.innerWidth < 912 ? 50 : 100}
-          height={windowWidth.innerWidth < 912 ? 50 : 100}
+          width={windowWidth < 912 ? 50 : 100}
+          height={windowWidth < 912 ? 50 : 100}
           src={"/spotify.svg"}
         />
-        {typeof window !== "undefined" && window.innerWidth < 912 ? (
+        {windowWidth < 912 ? (
           <Spline
             style={{
               width: 120,
