@@ -5,7 +5,7 @@ function About() {
   return (
     <div>
       <div
-        className="flex my-20 flex-col lg:flex-row w-full justify-center items-center text-center lg:text-left"
+        className="flex my-10 flex-col lg:flex-row w-full justify-center items-center text-center lg:text-left"
         style={{ height: "calc(100vh - 15rem)" }}
       >
         <div className="w-3/4 h-auto gap-10 flex flex-col lg:flex-row justify-center items-center space-x-4">
