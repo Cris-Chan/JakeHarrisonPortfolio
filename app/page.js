@@ -8,18 +8,6 @@ import Image from "next/image";
 export default function Home() {
   return (
     <main>
-      <div style={{ position: "absolute", top: "12%", left: "12%" }}>
-        <BlobSpotify />
-      </div>
-      <div style={{ position: "absolute", bottom: "12%", left: "12%" }}>
-        <BlobApple />
-      </div>
-      <div style={{ position: "absolute", top: "12%", right: "12%" }}>
-        <BlobYoutube />
-      </div>
-      <div style={{ position: "absolute", bottom: "12%", right: "12%" }}>
-        <BlobEmail />
-      </div>
       <div
         className="w-full flex h-full justify-center items-center "
         style={{
@@ -48,6 +36,18 @@ export default function Home() {
         >
           <source src="/lava.mp4" type="video/mp4" />
         </video>
+        <div style={{ position: "absolute", top: "12%", left: "12%" }}>
+          <BlobSpotify />
+        </div>
+        <div style={{ position: "absolute", bottom: "12%", left: "12%" }}>
+          <BlobApple />
+        </div>
+        <div style={{ position: "absolute", top: "12%", right: "12%" }}>
+          <BlobYoutube />
+        </div>
+        <div style={{ position: "absolute", bottom: "12%", right: "12%" }}>
+          <BlobEmail />
+        </div>
         <JakeCoin />
       </div>
     </main>
