@@ -37,16 +37,24 @@ export default function Home() {
           <source src="/lava.mp4" type="video/mp4" />
         </video>
         <div style={{ position: "absolute", top: "12%", left: "12%" }}>
-          <BlobSpotify />
+          <a href="https://spotify.link/o9XxP1StzDb">
+            <BlobSpotify />
+          </a>
         </div>
         <div style={{ position: "absolute", bottom: "12%", left: "12%" }}>
-          <BlobApple />
+          <a href="https://music.apple.com/us/artist/jake-harrison/1418938689">
+            <BlobApple />
+          </a>
         </div>
         <div style={{ position: "absolute", top: "12%", right: "12%" }}>
-          <BlobYoutube />
+          <a href="https://youtube.com/@jakeharrisonr?si=jdvA2KQ-4Z-SQozr">
+            <BlobYoutube />
+          </a>
         </div>
         <div style={{ position: "absolute", bottom: "12%", right: "12%" }}>
-          <BlobEmail />
+          <a href="mailto:Jakeharrisonr11@gmail.com">
+            <BlobEmail />
+          </a>
         </div>
         <div
           style={{
