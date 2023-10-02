@@ -16,7 +16,7 @@ function JakeCoin() {
       </div>
       <motion.div
         animate={{ rotate: [0, 360] }}
-        transition={{ duration: 90, repeat: true }}
+        transition={{ duration: 90, repeat: Infinity }}
         className={"absolute"}
       >
         <Image
