@@ -13,7 +13,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} `}>
+      <body className={`${inter.className} box-border`}>
         <div style={{ position: "sticky", top: 0, zIndex: 1000 }}>
           <Header />
         </div>
